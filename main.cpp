@@ -83,7 +83,7 @@ void printSolution(int dist[], int parent[], int src)
 { 
     cout << "Vertex \t\t Distance from Source (" << src << ")\t\t Parent\n"; 
     for (int i = 0; i < V; i++) 
-       {if(parent[i] == -1)
+       {if(parent[i] == -1 || parent[i]>V)
             {cout << i << "\t\t " << dist[i] << "\t\t\t\t\t " << "No Parent" << endl;}
          else  
            {cout << i << "\t\t " << dist[i] << "\t\t\t\t\t " << parent[i] << endl;}
