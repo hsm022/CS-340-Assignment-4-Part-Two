@@ -10,7 +10,7 @@ This repository contains part 2 of assignment 4.
 **Topic: Dijkstra's Algorithm**
 
 # Description: 
-I am choosing Dijkstra's Algorithm to implement in c++ programming language for part two of my fourth CS340 assignment. This project only has one file. 
+I am choosing Dijkstra's Algorithm to implement in c++ programming language for part two of my fourth CS340 assignment. This project has one source code file called main.cpp. It also has a folder called sample run which contains the graph I used as a sample and a text file which is a log file of the sample run.
 
 **main.cpp :**
 This file contains the source code of the Dijkstra's Algorithm. It prompts the user to enter total number of vertices. After that the algorithm asks the user to enter the relationship of each vertex to all the other vertices. Once this information is collected and a matrix is produced by the algorithm the user is asked to provide the source vertex. Once this information is entered succesfully, Dijkstra’s shortest path algorithm is performed and the result is printed on the screen.
