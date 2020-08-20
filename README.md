@@ -23,7 +23,7 @@ main.cpp is an modified version of Dijkstra’s shortest path algorithm from htt
 # Instructions to reproduce the project
 **On a linux machine**
 - Create an executable file (.o file) by running this command: g++ main.cpp -o main
-- Run the executable file ./heapsort
+- Run the executable file ./main
 
 **On a browser**
 - Go to https://www.onlinegdb.com/
