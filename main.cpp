@@ -1,6 +1,5 @@
+//This is an edited version of Dijkstra’s shortest path algorithm from https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/?ref=lbp
 
-// A C++ program for Dijkstra's single source shortest path algorithm. 
-// The program is for adjacency matrix representation of the graph 
 #include<iostream>
 #include<bits/stdc++.h>
 #include <limits.h> 
@@ -9,17 +8,15 @@
 using namespace std;
 
 
-int V;  
-// Number of vertices in the graph 
-//#define V 9 
+int V;  //Global variable for the number of vertices
+
+// The Graph class below and its functions are used to create a matrix for the Dijkstra's
+// algorithm
 //////////////////////////////////////////////////////////////////////////////////////////
 // A Class to represent directed graph 
 class Graph 
 { 
     int V;    // No. of vertices 
-  
-    // adj[u][v] would be true if there is an edge 
-    // from u to v, else false 
     int **adj; 
   
 public: 
@@ -28,7 +25,7 @@ public:
     // function to add an edge to graph 
     void addEdge(int u, int v, int cost )  { adj[u][v] = cost; } 
     void print(); 
-    int getCost(int u, int v);
+    int getCost(int u, int v); // function to get the cost of an edge
 }; 
   
 Graph::Graph(int V) 
@@ -67,7 +64,7 @@ int Graph::getCost(int u, int v)
 /////////////////////////////////////////////////////////////////////////////////////////
 
   
-// A utility function to find the vertex with minimum distance value, from 
+// Function to find the vertex with minimum distance value, from 
 // the set of vertices not yet included in shortest path tree 
 int minDistance(int dist[], bool sptSet[]) 
 { 
@@ -81,12 +78,16 @@ int minDistance(int dist[], bool sptSet[])
     return min_index; 
 } 
   
-// A utility function to print the constructed distance array 
-void printSolution(int dist[]) 
+// Display result
+void printSolution(int dist[], int parent[], int src) 
 { 
-    printf("Vertex \t\t Distance from Source\n"); 
+    cout << "Vertex \t\t Distance from Source (" << src << ")\t\t Parent\n"; 
     for (int i = 0; i < V; i++) 
-        printf("%d \t\t %d\n", i, dist[i]); 
+       {if(parent[i] == -1)
+            {cout << i << "\t\t " << dist[i] << "\t\t\t\t\t " << "No Parent" << endl;}
+         else  
+           {cout << i << "\t\t " << dist[i] << "\t\t\t\t\t " << parent[i] << endl;}
+       }
 } 
   
 // Function that implements Dijkstra's single source shortest path algorithm 
@@ -98,10 +99,11 @@ void dijkstra(Graph g, int src)
   
     bool sptSet[V]; // sptSet[i] will be true if vertex i is included in shortest 
     // path tree or shortest distance from src to i is finalized 
-  
+    
+    int parent[V];
     // Initialize all distances as INFINITE and stpSet[] as false 
     for (int i = 0; i < V; i++) 
-        dist[i] = INT_MAX, sptSet[i] = false; 
+        dist[i] = INT_MAX, sptSet[i] = false; parent[0] = -1;
   
     // Distance of source vertex from itself is always 0 
     dist[src] = 0; 
@@ -123,14 +125,15 @@ void dijkstra(Graph g, int src)
             // smaller than current value of dist[v] 
             if (!sptSet[v] && g.getCost(u,v) && dist[u] != INT_MAX 
                 && dist[u] + g.getCost(u,v) < dist[v]) 
-                dist[v] = dist[u] + g.getCost(u,v); 
+                {   parent[v] = u;
+                    dist[v] = dist[u] + g.getCost(u,v);}
     } 
   
-    // print the constructed distance array 
-    printSolution(dist); 
+    // print the constructed distance array and its parent
+    printSolution(dist,parent,src); 
 } 
   
-// driver program to test above function 
+// Main program
 int main() 
 {   
     cout << "How many vertices: " << endl;
@@ -146,10 +149,14 @@ int main()
         }
         cout << "__________________________________"<< endl;
     }
+    
+    g.print();
+    int mySource;
+    cout << "****************************************"<< endl;
+    cout << "Which vertex is the source? : ";
+    cin >> mySource;
   
-    g.print(); 
-  
-    dijkstra(g, 0); 
+    dijkstra(g, mySource); 
   
     return 0; 
 }
