@@ -1,4 +1,4 @@
-//This is an edited version of Dijkstra’s shortest path algorithm from https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/?ref=lbp
+//This is a modified version of Dijkstra’s shortest path algorithm from https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/?ref=lbp
 
 #include<iostream>
 #include<bits/stdc++.h>
