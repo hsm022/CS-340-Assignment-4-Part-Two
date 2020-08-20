@@ -30,5 +30,5 @@ main.cpp is an modified version of Dijkstra’s shortest path algorithm from htt
 - Click Run
 
 ## Sample Run on youtube
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/u4gHpJ1R0Lw/0.jpg)](https://youtu.be/u4gHpJ1R0Lw)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HHLG5sLNsDo/0.jpg)](https://youtu.be/HHLG5sLNsDo)
 
