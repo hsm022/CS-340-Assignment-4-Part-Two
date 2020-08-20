@@ -15,8 +15,6 @@ I am choosing Dijkstra's Algorithm to implement in c++ programming language for 
 **main.cpp :**
 This file contains the source code of the Dijkstra's Algorithm. It prompts the user to enter total number of vertices. After that the algorithm asks the user to enter the relationship of each vertex to all the other vertices. Once this information is collected and a matrix is produced by the algorithm the user is asked to provide the source vertex. Once this information is entered succesfully, Dijkstra’s shortest path algorithm is performed and the result is printed on the screen.
 
-the total number of inputs he/she will be entering. Once user provides a number the program creates a dynamic array and asks the user to provide the inputs. Once all the inputs are entered, the program generates a max-heap and starts sorting the array. Once the array is sorted it is printed on the screen.
-
 **Reference:**
 main.cpp is an modified version of Dijkstra’s shortest path algorithm from https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/?ref=lbp
 
